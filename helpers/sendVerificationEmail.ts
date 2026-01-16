@@ -1,11 +1,12 @@
 import {resend} from '../src/lib/resend'
-import {EmailTemplate} from '../emails/VerificationEmail.js'
+import {EmailTemplate} from '../emails/VerificationEmail'
 import { ApiResponse } from '../src/types/ApiResponse'
+import { getMaxListeners } from 'events';
 export async function sendVerificationEmail(email: string, username: string, otp: string):Promise<ApiResponse> {
     try {
           const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
-      to: [email],
+      to: ['riyaaggarwal2204@gmail.com'],
       subject: 'Hello world',
       react: EmailTemplate({ username: username,otp:otp }),
     });
